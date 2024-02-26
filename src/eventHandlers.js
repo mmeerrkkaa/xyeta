@@ -6,6 +6,8 @@ function handleSpawn(bot) {
     bot.chat('/warp hgfhtryrty');
 }
 
+function handleChat(bot) {
+}
 
 function handleDeath(bot) {
     //ot.chat('/warp hgfhtryrty');
@@ -17,6 +19,7 @@ function handleLogin(bot) {
     bot.chat('/reg GarBot123');
     bot.chat('/surv1');
     console.log(`${bot.username} connected to server.`);
+    setTimeout(() => bot.chat(`/warp hgfhtryrty`), 5000);
 }
 
 function handleEnd(bot) {

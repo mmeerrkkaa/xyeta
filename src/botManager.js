@@ -19,7 +19,9 @@ const spawnBot = (username, password, index) => {
         });
 
         // Register event handlers
-        bot.on('chat', (username, message) => handleChat(bot, username, message));
+        bot.on('message', async (jsonMsg) => {
+            console.log(jsonMsg.toString());
+        });
         bot.on('spawn', () => handleSpawn(bot));
         bot.on('death', () => handleDeath(bot));
         bot.on('login', () => handleLogin(bot));
@@ -29,7 +31,7 @@ const spawnBot = (username, password, index) => {
 
 const spawnBots = () => {
     const baseName = 'merkabottest';
-    const numBots = 10; // Количество ботов для генерации
+    const numBots = 1; // Количество ботов для генерации
 
     for (let index = 0; index < numBots; index++) {
         const username = generateRandomName(baseName);
